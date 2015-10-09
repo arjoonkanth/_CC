@@ -1,16 +1,441 @@
 $icon-font-path: '../fonts/';
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-$font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+$font-family-base: 'Oswald', Georgia, "Times New Roman", Times, serif !default;
+
+// Color settings
+
+$white: #fff;
+$black: #000;
+
+$blue: #4688f1;
+$yellow: #fdcd2f;
+$orange: #f2801b;
+$green: #3aa756;
+$red: #e8443b; 
+$gray: #737373;
 
 //Grid system
 
 $grid-columns:              12 !default;
 $grid-gutter-width:         30px !default;
-$screen-lg:                 1440px !default;
-$container-large-desktop:   (1380px + $grid-gutter-width) !default;
+
+$screen-lg:                 1440px !default; //large desktop
+$container-large-desktop:   (1380px + $grid-gutter-width) !default; //large-container
+
+$screen-md:                 1200px !default;
+$container-desktop:         (1140px + $grid-gutter-width) !default;
+
+$screen-sm:                  600px !default;
+$container-tablet:           (540px + $grid-gutter-width) !default;
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
+
+* {
+    outline: 0;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.yellow {
+    background-color: $yellow;
+}
+
+.orange {
+    background-color: $orange;
+}
+
+.green {
+    background-color: $green;
+}
+
+.red {
+    background-color: $red;
+}
+
+.gray {
+    background-color: $gray;
+}
+
+body {
+    padding-top: 3em;
+}
+
+.map {
+    img {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.map-layout {
+    position: relative;
+
+    .dot {
+        width: 0.75em;
+        height: 0.75em;
+        border-radius: 50% 50%;
+        display: inline-block;
+        position: absolute;
+    }
+
+    .dot.blue {
+        @extend .blue;
+    }
+
+    .dot.yellow {
+        @extend .yellow;
+    }
+
+    .dot.orange {
+        @extend .orange;
+    }
+
+    .dot.green {
+        @extend .green;
+    }
+
+    .dot.red {
+        @extend .red;
+    }
+}
+
+.section-box {
+    border-color: #cccccc;
+    background-color: #fafafa;
+
+    .sub-heading {
+        font-weight: 300;
+        margin: 0 0 0.835em 0;
+        line-height: 1;
+    }
+
+    .panel-body {
+        padding: 2.4em 2em;
+        height: 32em;
+    }
+
+    .panel-footer {
+        background-color: #f1f1f1;
+        
+        a {
+            text-decoration: none;
+            color: #484848;
+            @extend .text-capitalize;
+        }
+    }
+}
+
+.tags-panel {
+    .panel-body {
+        height: 448px - 42px;
+    }
+
+    .scroll-area {
+        padding: 1em 1em 1em 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 275px;
+
+        .glyphicon-star {
+            font-size: 1.25em;
+            line-height: 1;
+            margin-top: 0.6em;
+            color: #cccccc;
+        }
+
+        .star {
+            color: #fda529;
+            
+        }
+    }
+}
+
+.no-panel.section-box {
+    background: none !important;
+    border: none;
+    
+    .panel-body {
+        padding: 2.45em 0;
+    }
+
+    dl {
+        background-color: #fafafa;
+        border-top: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
+        border-left: 1px solid #cccccc;
+        border-radius: 3px;
+
+        dt {
+            padding-top: 0.75em;
+            padding-left: 1.75em;
+            color: #737373;
+            font-size: 0.75em;
+            font-weight: 400;
+            position: relative;
+
+            &:before {
+                content: " ";
+                position: absolute;
+                top: -2px;
+                left: -14px;
+                z-index: 1;
+                background: url("../images/clock.png") center center no-repeat;
+                width: 25px;
+                height: 32px;
+            }
+        }
+
+        dd {
+            padding: 0.25em 1.25em 1.25em 1.45em;
+        }
+
+        dd {
+            border-bottom: 1px solid #cccccc;
+            font-weight: 400;
+            font-size: 0.88em;
+            color: #484848;
+        }
+    }
+}
+
+.map-layout-image {
+    img {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.legend-list {
+
+    margin-top: 3em;
+    
+    li {
+        position: relative;
+        padding-left: 1.4em;
+
+        &:before {
+            position: absolute;
+            top: 0.4em;
+            left: 0;
+            content: " ";
+            width: 0.74em;
+            height: 0.74em;
+            border-radius: 100%;
+        }
+    }
+
+    .africa:before {
+        background-color: $blue;
+    }
+
+    .asia:before {
+        background-color: $yellow;
+    }
+
+    .australia:before {
+        background-color: $orange;
+    }
+
+    .europe:before {
+        background-color: $green;
+    }
+
+    .america:before {
+        background-color: $red;
+    }
+}
+
+.tag {
+    padding: 0.6em 3em 0.6em 1.5em;
+    margin-left: 0;
+    margin-bottom: 0.4em;
+    background-color: $white;
+    display: inline-block;
+    position: relative;
+    border: 1px solid #e1e1e1;
+    color: #484848;
+    
+    &:hover {
+        color: #484848;
+        text-decoration: none;
+    }
+
+    &:after {
+        background: url("../images/close.png") center center no-repeat;
+        content: " ";
+        position: absolute;
+        top: 0.76em;
+        right: 0.75em;
+        width: 1em;
+        height: 1em;
+    }
+
+    &:before {
+        position: absolute;
+        content: " ";
+        width: 0.5em;
+        height: 2.6em;
+        top: 0;
+        left: 0;
+        border-right: 1px solid #e1e1e1;
+    }
+}
+
+.tag-blue {
+    &:before {
+        @extend .blue;
+    }
+    
+}
+
+.tag-red {
+    &:before {
+        @extend .red;
+    }
+    
+}
+
+.tag-green {
+    &:before {
+        @extend .green;
+    }
+    
+}
+
+.tag-yellow {
+    &:before {
+        @extend .yellow;
+    }
+    
+}
+
+.tag-orange {
+    &:before {
+        @extend .orange;
+    }
+    
+}
+
+.tag-gray {
+    &:before {
+        @extend .gray;
+    }
+    
+}
+
+/* Small devices (tablets, 600px and up) */
+@media (min-width: $screen-sm-min) { 
+    .map-layout {
+        .dot.blue {
+            top: 8em;
+            left: 17em;
+        }
+
+        .dot.yellow {
+            right: 10.2em;
+            top: 3em;
+        }
+
+        .dot.orange {
+            bottom: 3.4em;
+            right: 3.8em;
+        }
+
+        .dot.green {
+            top: 2.8em;
+            left: 14.6em;
+        }
+
+        .dot.red {
+            top: 4em;
+            left: 4em;
+        }
+    }
+}
+
+/* Medium devices (desktops, 1200px and up) */
+@media (min-width: $screen-md-min) {  
+    .map-layout {
+        .dot.blue {
+            top: 5em;
+            left: 10.5em;
+        }
+
+        .dot.yellow {
+            right: 6.2em;
+            top: 2em;
+        }
+
+        .dot.orange {
+            bottom: 2em;
+            right: 2.2em;
+        }
+
+        .dot.green {
+            top: 1.4em;
+            left: 9em;
+        }
+
+        .dot.red {
+            top: 2.2em;
+            left: 2.2em;
+        }
+    }
+}
+
+/* Large devices (large desktops, 1440px and up) */
+@media (min-width: $screen-lg-min) {
+
+    .map-layout {
+
+        .dot.blue {
+            top: 6em;
+            left: 10.2em + 3.2em;
+        }
+
+        .dot.yellow {
+            right: 6.2em + 2em;
+            top: 2em;
+        }
+
+        .dot.orange {
+            bottom: 2.7em;
+            right: 2em + 0.8em;
+        }
+
+        .dot.green {
+            top: 2em;
+            left: 9em + 2.8em;
+        }
+
+        .dot.red {
+            top: 3em;
+            left: 2.2em + 1em;
+        }
+    }
+
+}
+
+@media (max-width: $screen-md-min) {
+    .section-box {
+
+        .panel-body {
+            padding: 2em 1em;
+            height: auto !important;
+        }
+    }
+
+    .tags-panel .scroll-area {
+        // height: auto;
+    }
+}

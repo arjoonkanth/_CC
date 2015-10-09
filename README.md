@@ -1,4 +1,4 @@
-# _CC
+# _CC - Sample Test
 
 Yeoman - [generator-gulp-webapp](https://github.com/yeoman/generator-gulp-webapp)
 
