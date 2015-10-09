@@ -1,0 +1,16 @@
+$icon-font-path: '../fonts/';
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+$font-family-base: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//Grid system
+
+$grid-columns:              12 !default;
+$grid-gutter-width:         30px !default;
+$screen-lg:                 1440px !default;
+$container-large-desktop:   (1380px + $grid-gutter-width) !default;
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
