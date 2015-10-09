@@ -9,9 +9,11 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -149,12 +151,12 @@
                             <a href="#" class="dot orange" data-toggle="tooltip" data-placement="top" title="Australia &amp; Oceania"></a>
                             <a href="#" class="dot yellow" data-toggle="tooltip" data-placement="top" title="Asia"></a>
                             <figure id="map" class="map">
-                                <!--[if lt IE 9]><img src="../images/world-map.png" alt="World Map"><![endif]-->
-                                <img src="../images/world-map.svg" alt="World Map">
+                                <!--[if lt IE 9]><img src="images/world-map.png" alt="World Map"><![endif]-->
+                                <img src="images/world-map.svg" alt="World Map">
                             </figure>
                         </div>
                         <div class="map-layout-image visible-xs-block">
-                            <img src="../images/world-map-mobile.png" alt="">
+                            <img src="images/world-map-mobile.png" alt="">
                         </div>
                         <ul class="legend-list list-unstyled">
                             <li class="africa">Africa</li>
@@ -169,7 +171,7 @@
             <div class="col-md-4">
                 <div class="section-box no-panel panel panel-default">
                     <div class="panel-body">
-                        <h2 class="sub-heading">Athelet's <strong>Schedule</strong></h2>
+                        <h2 class="sub-heading">Athlete's <strong>Schedule</strong></h2>
                         <dl>
                             <dt>7am - 8am</dt>
                             <dd>Reporting to work; receiving information from the previous day’s crew; checking the truck for all essential equipment; raising the flag.</dd>
@@ -193,11 +195,27 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/boostrap.min.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script>
+        jQuery( document ).ready(function( $ ) {
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
   </body>
 </html>

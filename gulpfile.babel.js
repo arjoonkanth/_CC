@@ -33,6 +33,10 @@ function lint(files, options) {
   };
 }
 const testLintOptions = {
+  globals: {
+    'jQuery':false,
+    '$':true
+  },
   env: {
     mocha: true
   }
@@ -156,7 +160,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
